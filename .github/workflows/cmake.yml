@@ -6,6 +6,7 @@ on:
       - main
 
 env:
+  BUILD_TYPE: Release
   BOOST_VER: 1.76.0
   BOOST_LIBS: date_time filesystem regex
 
@@ -125,6 +126,7 @@ jobs:
         run: |
              call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
              cmake ${{github.workspace}} -G "NMake Makefiles"
+
       - name: Build
         working-directory: ${{github.workspace}}/build
         shell: cmd
